@@ -6,12 +6,11 @@
   
   .search-container input {
     width: 80%;
-    height: 2.8em;
+    height: 4em;
     border-radius: 2em;
     border: 1px solid #b4b7bb;
     text-indent: 1em;
     font-style: italic;
-    appearance: outline;
   }
   
   .search-container input:focus {

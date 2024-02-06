@@ -22,17 +22,39 @@ const defaultTodos = [
     text: 'Comenzar desarrollo de TaxiPinar',
     completed: false
   },
+  {
+    text: 'Usar estados derivados',
+    completed: true
+  },
 ]
 
 function App() {
+
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setsearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => todo.completed).length;
+  const totalTodos = todos.length;
+
+  const searchedTodos = todos.filter(todo => {
+    const todoText = todo.text.toLowerCase();
+    const todoSearch = searchValue.toLocaleLowerCase();
+    return todoText.includes(todoSearch)
+  });
+
+
   return (
     <>
-      <TodoCounter total={3} completed={1}/>
-      <TodoSearch/>
+      <TodoCounter total={ totalTodos } completed={ completedTodos }/>
+      <TodoSearch 
+        searchValue = { searchValue }
+        setsearchValue = { setsearchValue }
+      />
 
       <TodoList>
-        {defaultTodos.map(todo => (
-          <TodoItem
+        {searchedTodos.map(todo => (
+          <TodoItem  
+          setTodos = { setTodos }
             key = {todo.key}
             text = {todo.text}
             completed = {todo.completed}
