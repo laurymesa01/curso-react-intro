@@ -1,6 +1,9 @@
+import './CreateTodoButton.css';
+
+
 function CreateTodoButton(props) {
     return (
-        <button>+</button>
+        <button className="createTodo-container">+</button>
     );
 }
 
