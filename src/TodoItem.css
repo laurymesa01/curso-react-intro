@@ -69,3 +69,9 @@
     top:-15px;
     right: 12px;
   }
+
+  .icon-delete:hover{
+    background: url('./assets/x-red.svg');
+    background-repeat: no-repeat;
+
+  }

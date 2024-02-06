@@ -42,6 +42,17 @@ function App() {
     return todoText.includes(todoSearch)
   });
 
+  const completeTodo = (text) => {
+    const newTodos = [... todos];
+    const todoIndex = newTodos.findIndex( todo => todo.text == text);
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos)
+  }
+
+  const deleteTodo = (text) => {
+    const newTodos = todos.filter(todo => todo.text != text);
+    setTodos(newTodos);
+  }
 
   return (
     <>
@@ -54,7 +65,8 @@ function App() {
       <TodoList>
         {searchedTodos.map(todo => (
           <TodoItem  
-          setTodos = { setTodos }
+            onComplete = { () => completeTodo(todo.text)}
+            onDelete = { () => deleteTodo(todo.text)}
             key = {todo.key}
             text = {todo.text}
             completed = {todo.completed}
