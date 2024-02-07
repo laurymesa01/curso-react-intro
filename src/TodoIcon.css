@@ -1,0 +1,46 @@
+.icon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .icon-check{
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+    left: 12px;
+  }
+  
+  .icon-active{
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+    left: 12px;
+  }
+
+  .icon-delete{
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    border: none;
+    cursor: pointer;
+    top:-15px;
+    right: 12px;
+  }
+
+  .icon-delete:hover .icon-svg{
+    fill: red;
+  }
+
+  .icon-svg{
+    
+  }
