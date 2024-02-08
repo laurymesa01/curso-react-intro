@@ -1,6 +1,6 @@
-import { ReactComponent as CircleSvg } from './assets/circle.svg';
-import { ReactComponent as CheckSvg } from './assets/circle-check.svg';
-import { ReactComponent as DeleteSvg } from './assets/x.svg';
+import { ReactComponent as CircleSvg } from '../assets/circle.svg';
+import { ReactComponent as CheckSvg } from '../assets/circle-check.svg';
+import { ReactComponent as DeleteSvg } from '../assets/x.svg';
 
 
 const iconTypes = {
