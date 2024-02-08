@@ -11,7 +11,9 @@ function AppUI({
   setsearchValue, 
   searchedTodos,
   completeTodo,
-  deleteTodo 
+  deleteTodo,
+  loading,
+  error 
 }) {
 
   return (
@@ -20,7 +22,11 @@ function AppUI({
       <TodoSearch searchValue={searchValue} setsearchValue={setsearchValue} />
 
       <TodoList>
-        {searchedTodos.map((todo) => (
+        { loading && <p>Estamos cargando...</p> }
+        { error && <p>Hubo un error!!!</p> }
+        { ( !loading && searchedTodos.length === 0 ) && <p>Crea tu primer todo</p> }
+
+        { !loading && searchedTodos.map((todo) => (
           <TodoItem
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
