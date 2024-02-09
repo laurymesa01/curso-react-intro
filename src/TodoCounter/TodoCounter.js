@@ -1,14 +1,21 @@
 import './TodoCounter.css';
 
-function TodoCounter({ total, completed }) {
+function TodoCounter({ total, completed, loading }) {
     return (
-        total == completed ?
+        total === completed ?
         <>
             <h1 className="title">
                 FELICIDADES!! Completaste todas las tareas
             </h1>
             {/* <img src='./assets/congratulations-congrats'/> */}
         </>
+
+        :
+        loading ?
+
+        <h1 className="title">
+            Estamos cargando...
+        </h1>
 
         :
 
